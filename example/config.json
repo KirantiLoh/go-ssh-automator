@@ -1,0 +1,23 @@
+{
+  "servers": [
+    {
+      "username": "<username for this specific server>",
+      "ip": "<your ip>",
+      "port": "<port for this specific server>",
+      "commands": [
+        "sudo apt-get update -y",
+        "sudo apt-get install cowsay -y",
+        "fortune | cowsay"
+      ]
+    },
+    {
+      "ip": "<next ip>",
+      "commands": ["sudo apt-get update -y"]
+    }
+  ],
+  "defaults": {
+    "port": "<default port for all servers>",
+    "username": "<default username for all servers>",
+    "identity_file": "<absolute path to your identity_file>"
+  }
+}
