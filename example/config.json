@@ -1,8 +1,9 @@
 {
   "servers": [
     {
-      "username": "mauriceyang_my28",
-      "ip": "35.226.153.14",
+      "username": "<username for this specific server>",
+      "ip": "<your ip>",
+      "port": "<port for this specific server>",
       "commands": [
         "sudo apt-get update -y",
         "sudo apt-get install cowsay -y",
@@ -10,13 +11,13 @@
       ]
     },
     {
-      "ip": "34.127.71.217",
+      "ip": "<next ip>",
       "commands": ["sudo apt-get update -y"]
     }
   ],
   "defaults": {
-    "port": "22",
-    "username": "mauriceyang_my28",
-    "identity_file": "/home/kirantiloh/.ssh/jarkom-kirantiloh"
+    "port": "<default port for all servers>",
+    "username": "<default username for all servers>",
+    "identity_file": "<absolute path to your identity_file>"
   }
 }

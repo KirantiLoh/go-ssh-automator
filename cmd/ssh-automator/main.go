@@ -33,17 +33,11 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	limiter := make(chan struct{}, 4)
-
 	updates := make(chan model.Update)
 
 	for _, server := range config.Servers {
 		wg.Add(1)
-		limiter <- struct{}{}
-		go func() {
-			commands.RunCommandsSSH(server, config.DefaultConfig, updates, &wg)
-			<-limiter
-		}()
+		go commands.RunCommandsSSH(server, config.DefaultConfig, updates, &wg)
 	}
 
 	go func() {
@@ -60,6 +54,5 @@ func main() {
 
 	wg.Wait()
 	close(updates)
-	close(limiter)
 
 }
